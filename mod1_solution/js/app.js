@@ -19,7 +19,7 @@ angular.module('LunchCheck', [])
                 };
             }
             else{
-                $scope.results = "Empty"
+                $scope.results = "Please enter data first"
             }
         }
     }
