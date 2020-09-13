@@ -9,7 +9,7 @@
     function FoundItemsDirective() {
         var ddo = {
             restrict: 'E',
-            templateUrl: 'foundItems.html',
+            templateUrl: 'menu.html',
             scope: {
                 foundItems: '<',
                 onEmpty: '<',
