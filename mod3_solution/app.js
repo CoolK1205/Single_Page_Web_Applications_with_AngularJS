@@ -12,16 +12,16 @@
             templateUrl: 'foundItems.html',
             scope: {
                 foundItems: '<',
-                onRemove: '&',
-                onEmpty: '<'
+                onEmpty: '<',
+                onRemove: '&'
             },
             controller: NarrowItDownController,
             controllerAs: 'menu',
             bindToController: true
-          };
+        };
         
           return ddo;
-    };
+    }
 
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService){
