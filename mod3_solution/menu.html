@@ -5,6 +5,6 @@
             <ul>
                 <li>{{item.name}} from {{item.short_name}}: {{item.description}}</li>
             </ul>
-            <input type="button" ng-click="menu.onRemove({index: $index})" class="btn btn-lg btn-primary" value="Don't want this one!">
+            <button ng-click="menu.onRemove({index: $index})">Don't want this one!</button>
         </div>
 </div>
