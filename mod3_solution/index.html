@@ -12,7 +12,7 @@
     <div class="search">
         <input type="text" placeholder="search term" class="form-control" ng-model="menu.query">
         <div class="narrow-button">
-            <button class="btn btn-primary" ng-click="menu.matchedMenuItems(menu.query)">Narrow It Down For Me!</button>
+            <button class="btn btn-primary" ng-click="menu.getMenu(menu.query)">Narrow It Down For Me!</button>
         </div>
     </div>
     <found-items found-items="menu.found" on-remove="menu.removeMenuItem(index)" on-empty="menu.message"></found-items>

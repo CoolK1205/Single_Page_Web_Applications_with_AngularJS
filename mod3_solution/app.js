@@ -29,7 +29,7 @@
         
         menu.query = '';
 
-        menu.matchedMenuItems = function(searchTerm) {
+        menu.getMenu = function(searchTerm) {
             var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
 
             promise.then(function(items) {
