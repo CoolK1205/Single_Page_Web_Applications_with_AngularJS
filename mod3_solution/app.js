@@ -9,14 +9,14 @@
     function FoundItemsDirective() {
         var ddo = {
             restrict: 'E',
-            templateUrl: 'menu.html',
+            templateUrl: 'foundItems.html',
             scope: {
                 foundItems: '<',
                 onRemove: '&',
                 onEmpty: '<'
             },
             controller: NarrowItDownController,
-            controllerAs: 'narrow',
+            controllerAs: 'menu',
             bindToController: true
           };
         
@@ -25,26 +25,26 @@
 
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService){
-        var search = this;
+        var menu = this;
+        
+        menu.query = '';
 
-        search.description = ""
-
-        search.getMenu = function(searchTerm){
+        menu.matchedMenuItems = function(searchTerm) {
             var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
 
             promise.then(function(items) {
                 if (items && items.length > 0) {
-                    search.empty = '';
-                    search.found = items;
+                    menu.message = '';
+                    menu.found = items;
                 } else {
-                    search.empty = 'Nothing found!';
-                    search.found = [];
+                    menu.message = 'Nothing found!';
+                    menu.found = [];
                 }
             });
         };
 
-        search.removeMenuItem = function(itemIndex) {
-            search.found.splice(itemIndex, 1);
+        menu.removeMenuItem = function(itemIndex) {
+            menu.found.splice(itemIndex, 1);
         }
 
     }
@@ -65,7 +65,7 @@
                     }
                 }
                 return foundItems;
-            })
-        }
+            });
+        };
     }
 }())

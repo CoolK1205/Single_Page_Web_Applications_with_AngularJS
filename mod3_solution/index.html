@@ -10,9 +10,9 @@
   <div class="container" ng-controller="NarrowItDownController as menu">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
     <div class="search">
-        <input type="text" placeholder="search term" class="form-control" ng-model="menu.shortName">
+        <input type="text" placeholder="search term" class="form-control" ng-model="menu.query">
         <div class="narrow-button">
-            <button class="btn btn-primary" ng-click="menu.matchedMenuItems(menu.shortName)">Narrow It Down For Me!</button>
+            <button class="btn btn-primary" ng-click="menu.matchedMenuItems(menu.query)">Narrow It Down For Me!</button>
         </div>
     </div>
     <found-items found-items="menu.found" on-remove="menu.removeMenuItem(index)" on-empty="menu.message"></found-items>
