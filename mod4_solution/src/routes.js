@@ -23,7 +23,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('categories', {
     url: '/categories',
     templateUrl: 'src/menuList/templates/categories.template.html',
-    controller: 'categoriesController as catCtrl',
+    controller: 'categoriesController as categoriesCtrl',
     resolve: {
       categories: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
@@ -32,9 +32,13 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   .state('items', {
-    url: '/categories/{itemId}',
-    templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
+    url: '/categories/{categoryShortName}',
+    templateUrl: 'src/shoppinglist/templates/items.template.html',
     controller: 'itemsController as itemsCtrl',
+    params: {
+      categoryShortName: null,
+      categoryName: null
+    },
     resolve: {
       item: ['$stateParams', 'ShoppingListService',
             function ($stateParams, ShoppingListService) {
