@@ -32,23 +32,19 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   .state('items', {
-    url: 'categories/{categoryShortName}',
-    templateUrl: 'src/shoppinglist/templates/items.template.html',
+    url: '/categories/{categoryShortName}',
+    templateUrl: 'src/menuList/templates/items.template.html',
     controller: 'itemsController as itemsCtrl',
     params: {
-      categoryShortName: null,
-      categoryName: null
+        categoryShortName: null,
+        categoryName: null
     },
     resolve: {
-      item: ['$stateParams', 'ShoppingListService',
-            function ($stateParams, ShoppingListService) {
-              return ShoppingListService.getItems()
-                .then(function (items) {
-                  return items[$stateParams.itemId];
-                });
-            }]
+        items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+            return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+        }]
     }
-  });
+});
 }
 
 })();
