@@ -2,7 +2,7 @@
 
     <fieldset>
       <legend>Registration</legend>
-      <form name='regForm' novalidate>
+      <form name='regForm' style="color:black" novalidate>
 
         <input type="text" name="firstname" placeholder="Enter your first name."
           ng-model="signupCtrl.user.firstname"
@@ -26,18 +26,22 @@
 
         <input type="text" name="phone" placeholder="Phone ###-###-####"
           ng-model="signupCtrl.user.phone"
-          pattern="(\d{3})-(\d{3})-(\d{4})">
+          pattern="(\d{3})-(\d{3})-(\d{4})"
+          required>
           <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
           <br>
 
         <input type="text" name="favoritedish" placeholder="Favorite Dish"
-        ng-model="signupCtrl.user.favoriteDish">
+        ng-model="signupCtrl.user.favoriteDish"
+        required>
         <span ng-if="signupCtrl.showError" class="help-block">That dish doesn't exist.</span>
         <br>
 
-        <input type="submit" class="btn btn-default" value="Signup"/>
+        <button
+          ng-disabled="signupCtrl.$invalid"
+          ng-click="reg.signup(regForm)">Submit</button>
             <span class="text-success" ng-show="signupCtrl.showMessage">Your information has been saved.</span>
 
           <div style="margin-top: 10px;">
