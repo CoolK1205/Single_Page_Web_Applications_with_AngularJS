@@ -1,8 +1,5 @@
 (function() {
     'use strict';
-    angular.module('public').controller('signupController', signupController);
-
-    signupController.$inject = ['MenuService'];
     var signupController = function(MenuService) {
         var reg = this;
 
@@ -37,4 +34,7 @@
 
         }
     };
+    
+    signupController.$inject = ['MenuService'];
+    angular.module('public').controller('signupController', signupController);
 })();

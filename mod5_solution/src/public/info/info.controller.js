@@ -1,9 +1,6 @@
 (function() {
     'use strict';
 
-    angular.module('public').controller('InfoController', infoController);
-    infoController.$inject = ['MenuService', 'ApiPath'];
-
     var infoController = function(MenuService, ApiPath) {
         var info = this;
         info.apiPath = ApiPath;
@@ -18,4 +15,7 @@
             info.signedUp = true;
         }
     };
+
+    infoController.$inject = ['MenuService', 'ApiPath'];
+    angular.module('public').controller('InfoController', infoController);
 })();
