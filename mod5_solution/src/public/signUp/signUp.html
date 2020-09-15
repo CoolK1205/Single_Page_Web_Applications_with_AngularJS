@@ -37,9 +37,8 @@
         <span ng-if="signupCtrl.showError" class="help-block">That dish doesn't exist.</span>
         <br>
 
-        <button
-          ng-disabled="regForm.$invalid"
-          ng-click="reg.submit()">Submit</button>
+        <input type="submit" class="btn btn-default" value="Signup"/>
+            <span class="text-success" ng-show="signupCtrl.showMessage">Your information has been saved.</span>
 
           <div style="margin-top: 10px;">
             Form valid? {{ regForm.$valid }}
