@@ -12,6 +12,10 @@
         reg.showError = false; 
         reg.showMessage = false;
 
+        reg.submit = function () {
+            reg.completed = true;
+            };
+
         reg.signup = function(form) {
             reg.showError = false;
             reg.showMessage = false;

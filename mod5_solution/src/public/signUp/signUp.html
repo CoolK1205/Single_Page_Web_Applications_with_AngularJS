@@ -32,6 +32,12 @@
           </span>
           <br>
 
+        <input type="text" name="favoritedish" placeholder="Favorite Dish"
+        ng-model="signupCtrl.user.favoriteDish"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="signupCtrl.showError" class="help-block">That dish doesn't exist.</span>>
+        <br>
+
         <button
           ng-disabled="regForm.$invalid"
           ng-click="reg.submit()">Submit</button>
