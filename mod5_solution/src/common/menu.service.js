@@ -38,7 +38,7 @@
     };
   
     service.getFavoriteDish = function(short_name) {
-      return $http.get(ApiPath + '/menu_items/' + short_name + '.json');
+      return $http.get('https://www.davidchuschinabistro.com/menu_items' + short_name + '.json');
     }
   
   }
