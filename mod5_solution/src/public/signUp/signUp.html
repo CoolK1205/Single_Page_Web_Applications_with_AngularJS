@@ -13,7 +13,7 @@
         <input type="text" name="lastname" placeholder="Enter your last name."
         ng-model="signupCtrl.user.lastname"
         required>
-        {{ signupCtrl.user.firstname }}
+        {{ signupCtrl.user.lastname }}
         <br>
 
         <input type="email" name="email" placeholder="Email"
@@ -41,7 +41,7 @@
 
         <button
           ng-disabled="signupCtrl.$invalid"
-          ng-click="reg.signup(regForm)">Submit</button>
+          ng-click="signupCtrl.signup(regForm)">Submit</button>
             <span class="text-success" ng-show="signupCtrl.showMessage">Your information has been saved.</span>
 
           <div style="margin-top: 10px;">
